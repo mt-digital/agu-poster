@@ -66,7 +66,7 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{A best-practices model for cyberinfrastructure collaboration, as applied to create the Coupled RipCAS-DFLOW model for floodplain modeling} % Poster title
+\title{A best-practices model for cyberinfrastructure collaboration \\ \large used to create the Coupled RipCAS-DFLOW model for floodplain modeling} % Poster title
 
 \author{Matthew A. Turner$^{a,b}$, Sarah Miller$^{c,d}$, Angela Gregory$^e$,
         Smriti Chaulagain$^e$, Lucas J. Sheneman$^a$,
@@ -155,27 +155,27 @@ many years of successive flood events.
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
 
     \begin{alertblock}{Coupled RipCAS-DFLOW (CoRD) In Action}
-        CoRD couples two models. The first is the DFLOW model for streamflow force modeling. The other is Riparian Community Alteration and
-        Succession model, which we've developed as part of this process. In fact, following BP1), it was written entirely by the
-        team at New Mexico Tech. HydroShare \cite{Horsburgh2016}
-
         \begin{figure}
-            \includegraphics[width=0.6\linewidth]{placeholder.jpg}
-            \caption{I'll have some combo of pictures of command-line interface, hydroshare upload, web app, and visualization routines}
+            \includegraphics[width=0.8\linewidth]{Figure1.pdf}
+            \caption{CoRD couples two models: DFLOW for flood modeling and
+            newly developed RipCAS, the Riparian Community Alteration and
+            Succession model. HydroShare\cite{Horsburgh2016} provides data
+            management via their REST API \cite{HydroShare2016}}
         \end{figure}
     \end{alertblock}
 
     \vspace{1in}
 
-    \begin{alertblock}{Collaboration Model}
-        Our active week-to-week team consisted of one software developer and three hydrologists.
-        As is typical in academic settings we all were working on multiple projects other than this one. We
-        still made time every week for communication.
-
+    \begin{alertblock}{Collaboration}
+         
         \begin{figure}
-            \includegraphics[width=0.6\linewidth]{placeholder.jpg}
-            \caption{This graphic will be a flow chart demonstrating our week-to-week,
-                     iterative collaboration structure}
+            \includegraphics[width=0.6\linewidth]{Figure2.pdf}
+            \caption{Our week-to-week team consists of one 
+        software developer and 
+        four hydrologists. By working towards
+        milestones, our work remained focused and progress could be
+        clearly measured. GitHub even provides milestones for projects,
+        so open software and good practices are easily integrated.}
         \end{figure}
     \end{alertblock}
 
@@ -200,13 +200,14 @@ many years of successive flood events.
 \end{block}
 
 \begin{block}{Discussion}
-    Monolithic projects like EarthCube and CSDMS are laudable efforts. But EarthCube ``is facing a mid-life crisis,''
-    according to a recent report in Science. After five years, an external advisory panel ``warned that EarthCube
-    still lacked a clear definition and might not be sustainable.''\cite{Witze2016}
-    CSDMS requires high up-front investment without a
-    guaranteed payoff.
-    Modern software development theory predicts that such ``waterfall'' approaches to software are
-    doomed to sub-optimality \cite{Sutherland2014}.
+    Monolithic projects like EarthCube and CSDMS are laudable efforts. But 
+    EarthCube ``is facing a mid-life crisis,''
+    according to a recent report in Science. After five years, an external 
+    advisory panel ``warned that EarthCube
+    still lacked a clear definition and might not be sustainable\cite{Witze2016}.''
+    CSDMS requires a large investment without a guaranteed payoff.
+    Modern software development theory predicts that such ``waterfall'' 
+    approaches to software are susceptible to slowness \cite{Sutherland2014}.
 \end{block}
 
 %----------------------------------------------------------------------------------------
