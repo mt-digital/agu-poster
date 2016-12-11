@@ -59,15 +59,18 @@
 
 \usepackage{booktabs} % Top and bottom rules for tables
 
+%\setbeamercolor{block alerted title}{fg=white,bg=norange} % Change the alert block title colors
+%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
 \title{A best-practices model for cyberinfrastructure collaboration, as applied to create the Coupled RipCAS-DFLOW model for floodplain modeling} % Poster title
 
-\author{Matthew A. Turner$^{a,b}$, Sarah Miller$^{c,d}$, Angela Gregory$^d$,
-        Smriti Chaulagain$^d$, Lucas J. Sheneman$^a$,
-        Mark Stone$^d$, Daniel Cadol$^c$
+\author{Matthew A. Turner$^{a,b}$, Sarah Miller$^{c,d}$, Angela Gregory$^e$,
+        Smriti Chaulagain$^e$, Lucas J. Sheneman$^a$,
+        Mark Stone$^e$, Daniel Cadol$^c$
 } % Author(s)
 
 \institute{$^a$Northwest Knowledge Network, University of Idaho, USA;
@@ -125,29 +128,21 @@ many years of successive flood events.
     \end{itemize}
 \end{block}
 
-\begin{block}{Short list of Best Practices (BP)}
-    By following these best practices, software can be more valuable and do more than just
-    couple two models.
-    \begin{enumerate}
-        \item{Work closely with scientists as development partners; commit to weekly meetings}
-        \item{Deliver scientifically valuable software quickly in small chunks}
-        \item{Do not increase the amount of programming or technical skill required for scientists to do their jobs.}
-        \item{Openness is key: open-source software, built-in data management and data sharing.}
-        \item{Use existing software wisely.}
-        \item{Take an adaptive approach; avoid waterfall planning.}
-    \end{enumerate}
-    The rest of this poster is devoted to describing the deeper problem that
-    next-generation modeling systems should be solving and how we are solving that deeper problem.
+\begin{block}{Deeper Problem}
+    \begin{itemize}
+        \item Scientists specialize in analysis including scripting, not cyberinfrastructure
+        \item Too often developers don't know or appreciate scientists goals and skills
+        \item Without open modeling software, it's difficult for models to be externally verified
+        \item Modeling results often emerge from highly opaque parameter tunings, limiting the opportunities
+            for other scientists to verify results
+        \item Too often cyberinfrastructure collaborations lack iterative feedback and progress
+        %\item Tools built without scientist participation frequently languish
+    \end{itemize}
+
 \end{block}
 
 
-%\begin{block}{Deeper Problem}
-    %Create a coupled model that is easy to use. Scientists should be free to focus on science, not on programming or learning
-    %data management principles, techniques, and standards. In order for the new model to be externally verified, it must be
-    %easy to use, the code must be effectively open sourced, and data sharing must be included. Too often the models that generate
-    %published results require opaque, unpublished parameterizations. It’s not clear whether the compelling results are real or just an
-    %artifact of the model.
-%\end{block}
+
 
 %------------------------------------------------
 
@@ -159,73 +154,30 @@ many years of successive flood events.
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
 
-%----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
-%----------------------------------------------------------------------------------------
+    \begin{alertblock}{Coupled RipCAS-DFLOW (CoRD) In Action}
+        CoRD couples two models. The first is the DFLOW model for streamflow force modeling. The other is Riparian Community Alteration and
+        Succession model, which we've developed as part of this process. In fact, following BP1), it was written entirely by the
+        team at New Mexico Tech. HydroShare \cite{Horsburgh2016}
 
-\begin{alertblock}{Coupled RipCAS-DFLOW (CoRD) In Action}
-    CoRD couples two models. The first is the DFLOW model for streamflow force modeling. The other is Riparian Community Alteration and
-    Succession model, which we've developed as part of this process. In fact, following BP1), it was written entirely by the
-    team at New Mexico Tech. \\
-    Here is the timeline of progress of CoRD, which shows how we used BP2)
-    \begin{itemize}
-        \item Phase I: Developed I/O Adapters for single-year coupled modeling
-        \item Phase II: Process for cycling through many years of flood intensity
-        \item Phase III: Added command-line interface (CLI) for running many-years simulation
-        \item Phase IV: Added automatic data management through HydroShare\cite{Horsburgh2016} REST API (see BP5)
-        \item Phase V: Added automatic data processing and visualization, also written by hydrologists at NM Tech
-        \item Phase VI: Web app interface for even simpler modeling on the CPU cluster and data management
-    \end{itemize}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]{placeholder.jpg}
+            \caption{I'll have some combo of pictures of command-line interface, hydroshare upload, web app, and visualization routines}
+        \end{figure}
+    \end{alertblock}
 
+    \vspace{1in}
 
-    \begin{figure}
-        \includegraphics[width=0.4\linewidth]{placeholder.jpg}
-        \caption{I'll have some combo of pictures of command-line interface, hydroshare upload, web app, and visualization routines}
-    \end{figure}
-\end{alertblock}
+    \begin{alertblock}{Collaboration Model}
+        Our active week-to-week team consisted of one software developer and three hydrologists.
+        As is typical in academic settings we all were working on multiple projects other than this one. We
+        still made time every week for communication.
 
-%----------------------------------------------------------------------------------------
-
-\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
-
-\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
-
-%----------------------------------------------------------------------------------------
-%	MATERIALS
-%----------------------------------------------------------------------------------------
-
-
-\begin{block}{Deeper Problem}
-    \begin{itemize}
-        \item Scientists are trained in analysis, but not in data management and open software practices
-        \item Without open modeling software, it's difficult for models to be externally verified
-        \item Modeling results often emerge from highly opaque parameter tunings, limiting the opportunities
-            for other scientists to verify results
-        \item Too often cyberinfrastructure collaborations are ``one-way''---developers don't know or appreciate
-            scientists goals and skills
-        \item Too often cyberinfrastructure collaborations lack iterative feedback between scientists and
-            software developers
-        \item Tools built without scientist participation frequently languish
-    \end{itemize}
-
-\end{block}
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.1
-
-\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
-
-%----------------------------------------------------------------------------------------
-%	METHODS
-%----------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.2
-
-\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]{placeholder.jpg}
+            \caption{This graphic will be a flow chart demonstrating our week-to-week,
+                     iterative collaboration structure}
+        \end{figure}
+    \end{alertblock}
 
 \end{column} % End of the second column
 
@@ -237,12 +189,24 @@ many years of successive flood events.
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
+\begin{block}{Some Key Best Practices}
+    \begin{enumerate}
+        \item{Work closely with scientists as development partners; commit to weekly meetings}
+        \item{Deliver scientifically valuable software quickly in small chunks}
+        \item{Do not increase the amount of programming or technical skill required for scientists to do their jobs.}
+        \item{Openness is key: open-source software, built-in data management and data sharing.}
+        \item{Take an adaptive approach; avoid waterfall planning.}
+    \end{enumerate}
+\end{block}
+
 \begin{block}{Discussion}
     Monolithic projects like EarthCube and CSDMS are laudable efforts. But EarthCube ``is facing a mid-life crisis,''
     according to a recent report in Science. After five years, an external advisory panel ``warned that EarthCube
-    still lacked a clear definition and might not be sustainable.''\cite{Witze2016} CSDMS requires high up-front investment without a
-    clear payoff. Modern software development theory would predict that such ``waterfall'' approaches to software are
-    doomed to sub-optimality \cite{Sutherland2014}. Instead, modern approaches lead us to adopt the steps I outlined above.
+    still lacked a clear definition and might not be sustainable.''\cite{Witze2016}
+    CSDMS requires high up-front investment without a
+    guaranteed payoff.
+    Modern software development theory predicts that such ``waterfall'' approaches to software are
+    doomed to sub-optimality \cite{Sutherland2014}.
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -266,30 +230,15 @@ many years of successive flood events.
 
 \begin{block}{References}
 
-%\nocite{*} % Insert publications even if they are not cited in the poster
 \small{\bibliographystyle{unsrt}
 \bibliography{bib}\vspace{0.75in}}
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-
-%\setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
-
-%\begin{block}{Acknowledgements}
-
-%\small{\rmfamily{Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. Aenean id neque dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}} \\
-
-%\end{block}
-
-%----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
-%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 %
 %\begin{alertblock}{Contact Information}
 %
